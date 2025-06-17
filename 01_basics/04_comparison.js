@@ -145,13 +145,18 @@ Let’s understand clearly:
 1. null == undefined → true (special case)
 
 2. null != 0
+     ➤ null is only equal to undefined, not 0
 
 3. null in math (>=, +, etc.) becomes 0
+    ➤ Example: null >= 0 → true  
+             0 + null → 0
 
 4. null == 0 → ❌ works differently  
-   ➤ No type conversion happens here  
-   ➤ null is not equal to 0 (false)
+    ➤ No type conversion happens here  
+    ➤ null is not equal to 0 (false)
 
 5. undefined in math becomes NaN → always false
-
+    ➤ All math comparisons with undefined are false  
+    ➤ Example: undefined >= 0 → false  
+              undefined + 1 → NaN
 */
