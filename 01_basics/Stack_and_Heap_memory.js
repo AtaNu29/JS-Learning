@@ -64,4 +64,4 @@ console.log(obj1.name); // Output: "Mita" ✅
 - JavaScript handles both for you behind the scenes
 */
 
-// visual diagram : 
+// visual diagram : https://www.linkedin.com/posts/atanu-mondal-28873b348_javascript-uses-2-types-of-memory-stack-activity-7340631683739582464-x68T?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFb2UsgBHiAJf9R_e1GCaBfhKAEyo1Qsb5k
