@@ -94,7 +94,35 @@ so changing obj2 also changes obj1.
 
 */
 
-/*------------------------------------------------
+/*
+------------------------------------------------
+🔢 List of Primitive Types:
+
+1️⃣ Number  
+2️⃣ String  
+3️⃣ Boolean  
+4️⃣ Undefined  
+5️⃣ Null  
+6️⃣ Symbol  
+7️⃣ BigInt
+
+------------------------------------------------
+🔎 typeof Results Table:
+
+| Data Type | Example                     | typeof result |
+|-----------|-----------------------------|---------------|
+| Number    | `let a = 5`                 | "number"      |
+| String    | `let b = "hello"`           | "string"      |
+| Boolean   | `let c = true`              | "boolean"     |
+| Undefined | `let d;`                    | "undefined"   |
+| Null      | `let e = null`              | **"object"** ⚠️ (bug) |
+| Symbol    | `let f = Symbol("id")`      | "symbol"      |
+| BigInt    | `let g = 123n`              | "bigint"      |
+
+⚠️ Special Note:
+```js
+typeof null // "object"
+------------------------------------------------
 🔍 List of Non-Primitive Types:
 
 1️⃣ Object  
