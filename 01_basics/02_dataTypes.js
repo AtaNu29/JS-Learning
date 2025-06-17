@@ -82,4 +82,9 @@ console.log(obj1.name);  // Output: "Mita"
 Because obj1 and obj2 point to the same memory (same object),
 so changing obj2 also changes obj1.
 
+***
+const outSideTemp = null;   // defined as null (empty on purpose)
+let userEmail;              // declared but not assigned (undefined)
+***
+
 */
