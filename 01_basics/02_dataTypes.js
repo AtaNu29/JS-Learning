@@ -81,10 +81,44 @@ console.log(obj1.name);  // Output: "Mita"
 🧠 Why?
 Because obj1 and obj2 point to the same memory (same object),
 so changing obj2 also changes obj1.
+*/
 
-***
-const outSideTemp = null;   // defined as null (empty on purpose)
-let userEmail;              // declared but not assigned (undefined)
-***
+/*
+
+🟥 const outSideTemp = null;   // defined as null (empty on purpose)
+🟥 let userEmail;              // declared but not assigned (undefined)
+🟥 const id = Symbol("123");         // create a symbol with description "123"
+🟥 const anotherId = Symbol("123");  // another symbol with same description
+
+💡 console.log(id === anotherId);    // false
 
 */
+
+/*------------------------------------------------
+🔍 List of Non-Primitive Types:
+
+1️⃣ Object  
+2️⃣ Array  
+3️⃣ Function  
+4️⃣ Date
+5️⃣ RegExp  
+6️⃣ Map / Set / WeakMap / WeakSet  
+7️⃣ Others (BigInt object, etc.)
+
+------------------------------------------------
+🔎 typeof Results Table:
+
+| Data Type        | Example                         | typeof result |
+|------------------|---------------------------------|---------------|
+| Object           | `{ name: "Atanu" }`             | "object"      |
+| Array            | `[1, 2, 3]`                     | "object"      |
+| Function         | `function() {}`                 | "function" / "object function" |
+| Date             | `new Date()`                    | "object"      |
+| RegExp           | `/abc/`                         | "object"      |
+| Map              | `new Map()`                     | "object"      |
+| Set              | `new Set()`                     | "object"      |
+
+⚠️ Note: Arrays and Dates return `"object"` with `typeof` —  
+To check if something is an array:
+```js
+Array.isArray(myArray) // true ✅*/
