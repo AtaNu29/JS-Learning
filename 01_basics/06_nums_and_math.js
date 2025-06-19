@@ -134,7 +134,8 @@ Math.floor(...) → rounds it down to nearest whole number (0 to 10)
 + min → shifts the range from (0–10) to (10–20)
 */
 
-/*| Method         | What It Does         | Example               |
+/*
+| Method         | What It Does         | Example               |
 | -------------- | -------------------- | --------------------- |
 | `Math.PI`      | Gives the value of π | `3.14...`             |
 | `Math.round()` | Nearest integer      | `Math.round(4.6) → 5` |
