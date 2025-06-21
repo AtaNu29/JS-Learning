@@ -71,9 +71,21 @@ let part = basket.slice(1, 3);      // ["ball", "car"]
 basket.splice(1, 1, "lego");        // ["toy", "lego", "car"]
 let result = basket.join(" + ");    // "toy + lego + car"
 
-console.log("Main Basket:", basket);
-console.log("Sliced Part:", part);
-console.log("Joined Result:", result);
+console.log("Main Basket:", basket);     
+// Output: ["toy", "lego", "car"]
+
+console.log("Sliced Part:", part);       
+// Output: ["ball", "car"] (from previous slice step)
+
+console.log("Joined Result:", result);   
+// Output: "toy + lego + car"
+
+/*
+| Code                   | What it does                                        |
+|------------------------|-----------------------------------------------------|
+| `splice(1, 1, "lego")` | Removes 1 item at index 1 and inserts "lego"        |
+| `splice(1, 0, "lego")` | Inserts "lego" at index 1 without removing anything |
+*/
 
 // Summary Table (in comment):
 /*
