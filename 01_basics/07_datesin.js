@@ -85,10 +85,27 @@ if (today.getMonth() === myBirthday.getMonth() && today.getDate() === myBirthday
 
 // 🎨 Fancy formatting using toLocaleDateString() with options
 // It's like telling JavaScript: "Hey, I want the full day name and year only!"
-console.log("Formatted (weekday + year):", d.toLocaleDateString('default', {
-  weekday: 'long',   // Full name of the weekday (like 'Friday')
-  year: 'numeric'    // Full year (like 2025)
-}));
-// Output example: "Friday, 2024" (depending on your date)
+console.log(d.toLocaleDateString('default', {
+  month: 'long', // Full month name (like 'June')
+  day: 'numeric', // Day of the month (like 20)
+  weekday: 'long', // Full name of the weekday (like 'Friday')
+  year: 'numeric' // Full year (like 2025)
+})); 
+// Output example: Thursday, 20 June 2024
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+console.log(d.toLocaleDateString('bn-IN', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+})); 
+// Output example: "শনিবার, ২১ জুন, ২০২৫"
+
+/*
+| 🔹 `new Date()` | Returns the full current date and time |
+| --------------- | -------------------------------------- |
+| 🔹 `Date.now()` | Returns the timestamp in milliseconds  |
+*/
 
 // 🎉 That’s it! You now understand Date in JavaScript like a superhero coder in kindergarten! 🚀
