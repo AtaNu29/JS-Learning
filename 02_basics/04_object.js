@@ -102,15 +102,19 @@ const userProfile = {
     isLoggedIn: true
 };
 
+// 🧩 Object.keys() → gives you the names of the keys
 console.log(Object.keys(userProfile)); 
 // ➜ ["id", "name", "isLoggedIn"]
 
+// 🧩 Object.values() → gives you the values
 console.log(Object.values(userProfile)); 
 // ➜ ["abc123", "Atanu", true]
 
+// 🧩 Object.entries() → gives you key-value pairs
 console.log(Object.entries(userProfile)); 
 // ➜ [["id", "abc123"], ["name", "Atanu"], ["isLoggedIn", true]]
 
+// 🧐 hasOwnProperty() → checks if the key exists
 console.log(userProfile.hasOwnProperty('isLoggedIn')); 
 // ➜ true
 
@@ -128,3 +132,8 @@ delete profile.username;   // ❌ won't be deleted
 
 console.log(profile); 
 // ➜ { username: "hero", level: 10 }
+
+// ✅ Object.hasOwn()
+// Newer way (ES2022+) to check if a key exists
+console.log(Object.hasOwn(userProfile, 'name')); // ➜ true
+console.log(Object.hasOwn(userProfile, 'email')); // ➜ false
