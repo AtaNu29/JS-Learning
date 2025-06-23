@@ -137,3 +137,56 @@ console.log(profile);
 // Newer way (ES2022+) to check if a key exists
 console.log(Object.hasOwn(userProfile, 'name')); // ➜ true
 console.log(Object.hasOwn(userProfile, 'email')); // ➜ false
+
+// 🎒 Imagine an object is like a school bag with labeled items inside
+const student = {
+  name: "Atanu",
+  age: 22,
+  class: "Web Dev",
+  country: "India"
+};
+
+// 🧩 Normally, we get each value like this:
+console.log(student.name);   // ➜ "Atanu"
+console.log(student.age);    // ➜ 22
+
+// ✅ But with DESTRUCTURING, we can take items out quickly!
+const { name, age } = student;
+
+console.log(name); // ➜ "Atanu"
+console.log(age);  // ➜ 22
+
+// 🎁 You can also rename while destructuring:
+const { country: home } = student;
+console.log(home); // ➜ "India"
+
+// 📦 Destructure and use everything
+const { class: course, country } = student;
+console.log(course);  // ➜ "Web Dev"
+console.log(country); // ➜ "India"
+
+// ✅ Nested Object Destructuring
+const user2 = {
+  id: 1,
+  profile: {
+    firstName: "Riya",
+    lastName: "Mondal"
+  }
+};
+
+const { profile: { firstName, lastName } } = user2;
+console.log(firstName); // ➜ "Riya"
+console.log(lastName);  // ➜ "Mondal"
+
+// 🧸 You can also give default values:
+const { nickname = "Guest" } = student;
+console.log(nickname); // ➜ "Guest" (since nickname was not in object)
+
+// 🧩 Summary:
+/*
+🎒 Object destructuring = shortcut to take out values
+✅ Use {} on the left to grab keys
+✍️ Rename with key: newName
+🪄 Set default values if key is missing
+📦 Works on nested objects too
+*/
