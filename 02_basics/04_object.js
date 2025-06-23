@@ -169,13 +169,13 @@ console.log(country); // ➜ "India"
 const user2 = {
   id: 1,
   profile: {
-    firstName: "Riya",
+    firstName: "Sayan",
     lastName: "Mondal"
   }
 };
 
 const { profile: { firstName, lastName } } = user2;
-console.log(firstName); // ➜ "Riya"
+console.log(firstName); // ➜ "Sayan"
 console.log(lastName);  // ➜ "Mondal"
 
 // 🧸 You can also give default values:
