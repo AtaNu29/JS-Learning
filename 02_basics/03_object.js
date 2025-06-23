@@ -1,17 +1,17 @@
 // ✅ 1. Object Declaration – Two Ways
 
-// Method 1: Object literal
-let person = {
-  name: "Riya",
-  age: 18
-};
+// Method 3: Singleton Object – will learn in the next class 😊
 
 // Method 2: Using new Object()
 let student = new Object();
 student.name = "Rahul";
 student.age = 20;
 
-// Method 3: Singleton Object – will learn in the next class 😊
+// Method 1: Object literal
+let person = {
+  name: "Riya",
+  age: 18
+};
 
 // ✅ 2. Accessing Properties
 
@@ -85,6 +85,43 @@ let animal = {
 delete animal.color;
 console.log(animal);        // { type: "Cat" }
 
+// ✅ What is 'this' in an object?
+
+// 'this' refers to the current object calling the method.
+// It helps access the object's own properties inside a function.
+
+let person = {
+  name: "Riya",
+  age: 18,
+  greet: function () {
+    console.log("Hi, my name is " + this.name);
+  }
+};
+
+person.greet(); // Output: Hi, my name is Riya
+
+// ❌ If we don’t use 'this', it won't know where 'name' is
+
+let wrongPerson = {
+  name: "Rahul",
+  greet: function () {
+    console.log("Hi, my name is name"); // Invalid, will print as-is
+  }
+};
+
+wrongPerson.greet(); // Output: Hi, my name is name
+
+// ✅ Another Example
+
+let dog = {
+  name: "Tommy",
+  speak: function () {
+    console.log(this.name + " says Woof!");
+  }
+};
+
+dog.speak(); // Output: Tommy says Woof!
+
 // 📘 Summary (For Easy Recall): 
 
 /*
@@ -102,11 +139,18 @@ console.log(animal);        // { type: "Cat" }
 
 🔷 Using Symbol as a key:
 - let sym = Symbol("desc")
-- obj[sym] = value
+- [sym] = value
 
 🔷 Object.freeze(obj):
 - Prevents all changes (no add/update/delete allowed)
 
 🔷 delete obj.key:
 - Deletes a property (only works if not frozen)
+
+// 📌 Summary:
+
+- 'this' means: "the object itself"
+- Used inside object methods
+- Helps access the object's own data (like name, age, etc.)
+- Think of 'this' as saying: "I am this object"
 */
