@@ -10,6 +10,11 @@
     console.log(`DB CONNECTED TWO ${name}`);
 })('Atanu');
 
+// ++++++++++++++++++ 💡 Structure Template: +++++++++++++++++++++++
+(() => {
+  // your code here ✅ Wrapped in () to make it an expression. ✅ Immediately called with (). ✅ Curly braces {} hold the function body.
+})();
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 /*
 🧠 What is IIFE?
 IIFE stands for:
