@@ -51,3 +51,23 @@ for (let index = 1; index <= 20; index++) {
 
 // 🔹 break: Think of a robot walking. If it hits a wall → stop.
 // 🔹 continue: Robot sees a puddle → skips it and walks forward.
+
+// Interview Practice
+for (let i = 5; i >= 1; i--) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+        row += "*";
+    }
+    console.log(row);
+}
+// output: 
+// *****
+// ****
+// ***
+// **
+// *
+
+// 💡 Shorter Version
+for (let i = 5; i >= 1; i--) {
+    console.log("*".repeat(i));
+}
