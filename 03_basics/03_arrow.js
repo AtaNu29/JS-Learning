@@ -47,11 +47,11 @@ const addTwo1 = (num1, num2) => {
 const addTwo2 = (num1, num2) => num1 + num2;
 
 // 3. Return object
-const addTwo3 = (num1, num2) => ({username: "devraj"})
+const addTwo3 = (num1, num2) => ({ sum: num1 + num2 });
 
 console.log(addTwo1(10, 20)); // 30
-console.log(addTwo2(7, 8));   // 15
-console.log(addTwo3(1, 2));   // { username: 'devraj' }
+console.log(addTwo2(7, 8));  // 15
+console.log(addTwo3(1, 2)); // { sum: 3 }
 
 /*
 | Context                      | Code Example                             | In Browser (window)           | In Node.js                    |
