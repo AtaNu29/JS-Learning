@@ -1,3 +1,7 @@
+/* -----------------------------------------------
+   ✅ Basic DOM Manipulation
+------------------------------------------------ */
+
 // Find an element by ID
 const heading = document.getElementById("myHeading");
 
@@ -35,6 +39,10 @@ allParas.forEach(function(item) {
 | Change style              | `element.style.color = "red";`                        |
 
 */
+
+/* -----------------------------------------------
+   ✅ More Basic DOM Manipulation Step By Step
+------------------------------------------------ */
 
 // Create a new element
 const newPara = document.createElement("p");
