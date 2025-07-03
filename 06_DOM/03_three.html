@@ -8,7 +8,7 @@
 <body style="background-color: #212121; color: #FFF;">
     
 </body>
-<script>
+<script> 
 
     // ✅ Create a new <div> element and store it in a variable
     const div = document.createElement('div');
@@ -60,4 +60,35 @@
     document.body.appendChild(div);
 
 </script>
+
+<!-- Practise
+<script>
+   function createDiv(color, text) {
+      const newDiv = document.createElement('div');
+      newDiv.setAttribute("title", "Hello World!");
+      newDiv.setAttribute("class", "newClass");
+      newDiv.setAttribute("id", "newID");
+      newDiv.style.backgroundColor = color;
+      newDiv.style.padding = '12px';
+      newDiv.style.marginBottom = '5px';
+      newDiv.style.borderRadius = '7px';
+      newDiv.style.textAlign = 'center';
+      let addText = document.createTextNode(text);
+      newDiv.appendChild(addText);
+      console.log(newDiv);
+
+      document.body.appendChild(newDiv);
+   }
+   let myColorArray = ["green", "red", "purple"];
+   let myTextArray = ["Hello", "World", "JavaScript"];
+
+for (let index = 0; index < myColorArray.length; index++) {
+    let color = myColorArray[index];
+    let text = myTextArray[index];
+
+    setTimeout(() => {
+        createDiv(color, text);
+    }, index * 1000);
+}
+</script> -->
 </html>
