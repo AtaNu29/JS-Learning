@@ -9,33 +9,23 @@
     
 </body>
 <script>
-/*    -------------------------------------------------------------
-       This is a multi-line comment.
-       You can write multiple lines here
-       to explain your code in more detail!
-    ------------------------------------------------------------- */
 
     // ✅ Create a new <div> element and store it in a variable
     const div = document.createElement('div');
 
     /* ---------------------------------------------------------------
-      
-       
-       
-       
        Or we can create a random ID for fun like this:
        
-       div.id = Math.round(Math.random() * 10 + 1);
-       
-       In the next line, we set a specific ID manually:
+       div.id = Math.round(Math.random() * 10 + 1); // just for Fun
     --------------------------------------------------------------- */
+
     div.className = 'main'; //  We can set the class name of the div like this
     div.id = 'myId'; //  We can set the ID name of the div like this
-    // But This overwrites any previous ID value
+    // But This overwrites any previous value
 
     // ✅ Set an HTML attribute (this shows as a tooltip on hover)
     div.setAttribute("title", "Hello World!"); // preferred way to add attributes
- 
+
     // ✅ Add CSS styles to make the div look nice
     div.style.backgroundColor = 'green';      // Sets background color to green
     div.style.padding = '12px';               // Adds space inside the div
