@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #FFF;">
+    
+</body>
+<script>
+/*    -------------------------------------------------------------
+       This is a multi-line comment.
+       You can write multiple lines here
+       to explain your code in more detail!
+    ------------------------------------------------------------- */
+
+    // ✅ Create a new <div> element and store it in a variable
+    const div = document.createElement('div');
+
+    /* ---------------------------------------------------------------
+      
+       
+       
+       
+       Or we can create a random ID for fun like this:
+       
+       div.id = Math.round(Math.random() * 10 + 1);
+       
+       In the next line, we set a specific ID manually:
+    --------------------------------------------------------------- */
+    div.className = 'main'; //  We can set the class name of the div like this
+    div.id = 'myId'; //  We can set the ID name of the div like this
+    // But This overwrites any previous ID value
+
+    // ✅ Set an HTML attribute (this shows as a tooltip on hover)
+    div.setAttribute("title", "Hello World!"); // preferred way to add attributes
+
+    // ✅ Add CSS styles to make the div look nice
+    div.style.backgroundColor = 'green';      // Sets background color to green
+    div.style.padding = '12px';               // Adds space inside the div
+    div.style.borderRadius = '7px';           // Rounds the corners of the div
+    div.style.width = '200px';                // Sets width of the div
+    div.style.textAlign = 'center';           // Centers text inside the div
+    div.style.margin = '20px auto';           // Centers the div horizontally
+    div.style.fontFamily = 'Arial, sans-serif'; // Sets the font style
+    div.style.fontSize = '18px';              // Sets the font size
+
+    /* ---------------------------------------------------------------
+       Two ways to add text inside the div:
+       
+       1) Using innerHTML:
+       
+          div.innerHTML = 'Toxic Paradox';
+          
+          This can include HTML tags like <strong>.
+       
+       2) Using createTextNode (safer for plain text):
+    --------------------------------------------------------------- */
+
+    const addText = document.createTextNode('Toxic Paradox'); // safer way
+
+    // ✅ Add the text into the div
+    div.appendChild(addText);
+
+    // ✅ Print the div in the console so you can inspect it
+    console.log(div);
+
+    // ✅ Finally, add the div into the body so it appears on the page
+    document.body.appendChild(div);
+
+</script>
+</html>

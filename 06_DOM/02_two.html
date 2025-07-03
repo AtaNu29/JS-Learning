@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #FFF;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednessday</div>
+        <div class="day">Thursday</div>
+    </div>
+    
+</body>
+     <script>
+        const parent = document.querySelector('.parent');
+
+// Print the parent element
+console.log("Parent element:", parent);
+
+// Print children (elements only)
+console.log("Children (elements only):", parent.children);
+
+// Print the second child
+console.log("Second child innerHTML:", parent.children[1].innerHTML);
+
+// Loop through all child elements
+for (let i = 0; i < parent.children.length; i++) {
+    console.log("Child", i, ":", parent.children[i].innerHTML);
+}
+
+// Change style of second child (Tuesday)
+parent.children[1].style.color = "orange";
+
+// Print first and last element child
+console.log("First element child:", parent.firstElementChild.innerHTML);
+console.log("Last element child:", parent.lastElementChild.innerHTML);
+
+// Select first .day div
+const dayOne = document.querySelector('.day');
+
+// Print dayOne
+console.log("dayOne:", dayOne.innerHTML);
+
+// Find its parent element
+console.log("dayOne's parent element:", dayOne.parentElement);
+
+// Find its next sibling element
+console.log("dayOne's next sibling element:", dayOne.nextElementSibling.innerHTML);
+
+// Print all child nodes (includes text nodes and comments)
+console.log("All childNodes (elements, text nodes, comments):", parent.childNodes);
+
+        
+     </script>
+</html>
+
+<!-- 📝 Cheat Sheet: 
+| **Property/Method**   | **What it does**                      |
+| --------------------- | ------------------------------------- |
+| `.children`           | Only element children                 |
+| `.childNodes`         | Everything (elements, text, comments) |
+| `.firstElementChild`  | First element child                   |
+| `.lastElementChild`   | Last element child                    |
+| `.parentElement`      | Parent element                        |
+| `.nextElementSibling` | Next sibling element                  |
+ -->
