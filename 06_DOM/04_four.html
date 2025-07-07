@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #FFF;">
+  <!-- Start with one list item -->
+  <ul class="language">
+    <li>JavaScript</li>
+  </ul>
+</body>
+<script>
+  // ------------------------------------------------------------
+  // Function to add a new <li> using innerHTML
+  // ------------------------------------------------------------
+  function addLanguage(languageName) {
+    // Create a new <li> element
+    let lan = document.createElement("li");
+
+    // Add text using innerHTML (can include HTML tags)
+    lan.innerHTML = `${languageName}`;
+
+    // Find the <ul> and add the new <li> inside it
+    document.querySelector(".language").appendChild(lan);
+  }
+
+  addLanguage("PhP");
+  addLanguage("C++");
+
+  // ------------------------------------------------------------
+  // Function to add a new <li> using createTextNode (safer way)
+  // ------------------------------------------------------------
+  function addOptiLanguage(languageName) {
+    // Create a new <li> element
+    let li = document.createElement("li");
+
+    // Create a text node and add it to the <li>
+    li.appendChild(document.createTextNode(languageName));
+
+    // Append the <li> to the <ul>
+    document.querySelector(".language").appendChild(li);
+  }
+
+  addOptiLanguage("C#");
+  addOptiLanguage("TypeScript");
+
+  // ------------------------------------------------------------
+  // Edit #1 → Replace the 4th <li> with a new <li> ("Mojo")
+  // ------------------------------------------------------------
+
+  // Select the 4th <li> in the list
+  const fourthLang = document.querySelector("li:nth-child(4)");
+
+  // Create a brand new <li> with new text
+  const newli = document.createElement("li");
+  newli.textContent = "Mojo";
+
+  // Replace the old element with the new one
+  fourthLang.replaceWith(newli);
+
+  // ------------------------------------------------------------
+  // Edit #2 → Change the last <li> to "Java" using outerHTML
+  // ------------------------------------------------------------
+
+  const fifthLang = document.querySelector("li:last-child");
+  fifthLang.outerHTML = "<li>Java</li>";
+
+  // ------------------------------------------------------------
+  // Remove the 4th <li> from the list completely
+  // ------------------------------------------------------------
+
+  const remove = document.querySelector("li:nth-child(4)");
+  remove.remove();
+
+</script>
+</html>
+
+<!-- 
+📝 Quick Reference:
+| **Action**      | **Code**                          |
+| --------------- | --------------------------------- |
+| Add element     | `appendChild()`                   |
+| Create text     | `document.createTextNode()`       |
+| Replace element | `element.replaceWith(newElement)` |
+| Replace HTML    | `element.outerHTML = "<new>"`     |
+| Remove element  | `element.remove()`                |
+ -->
