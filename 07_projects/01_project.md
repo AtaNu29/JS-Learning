@@ -7,6 +7,7 @@
 ## project 1
 
 ``` javascript
+
 const btn = document.querySelectorAll('.button');
 const body = document.querySelector('body');
 
@@ -30,6 +31,37 @@ btn.forEach((btns) => {
   });
 });
 
+// Switch Case:
+
+const btn = document.querySelectorAll('.button');
+const body = document.querySelector('body');
+
+btn.forEach((btns) => {
+  btns.addEventListener('click', (e) => {
+    btn.forEach((btns) => {
+      btns.addEventListener('click', (e) => {
+        switch (e.target.id) {
+          case 'grey':
+            body.style.backgroundColor = e.target.id;
+            break;
+          case 'white':
+            body.style.backgroundColor = e.target.id;
+            break;
+          case 'blue':
+            body.style.backgroundColor = e.target.id;
+            break;
+          case 'yellow':
+            body.style.backgroundColor = e.target.id;
+            break;
+          case 'purple':
+            body.style.backgroundColor = e.target.id;
+            break;
+        }
+      });
+    });
+  });
+});
+
 ```
 
 ## project 2
@@ -38,11 +70,9 @@ btn.forEach((btns) => {
 
 const form = document.querySelector('form');
 
-/*/* This usecase will give you empty value :
-
+/* This usecase will give you empty value
 const height = parseInt(document.querySelector('#height').value);
-const weight = parseInt(document.querySelector('#weight').value);
-*/
+const weight = parseInt(document.querySelector('#weight').value);*/
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -58,13 +88,27 @@ form.addEventListener('submit', (e) => {
     const bmi = (weight / ((height * height) / 10000)).toFixed(2);
 
     if (bmi < 18.6) {
-      results.innerHTML = `<span>You are Under Weight = ${bmi}</span>`;
+      results.innerHTML = `You are Under Weight = <span> ${bmi}</span>`;
     } else if (bmi > 24.9) {
-      results.innerHTML = `<span>You are Over Weight = ${bmi}</span>`;
+      results.innerHTML = `You are Over Weight = <span> ${bmi}</span>`;
     } else {
-      results.innerHTML = `<span>Your Weight is Normal = ${bmi}</span>`;
+      results.innerHTML = `Your Weight is Normal = <span> ${bmi}</span>`;
     }
   }
 });
+results.style.fontSize = '20px';
+
+```
+
+## project 3
+
+``` javascript
+
+const clock = document.getElementById('clock');
+
+setInterval(() => {
+  let date = new Date();
+  clock.innerHTML = date.toLocaleTimeString();
+}, 1000);
 
 ```
