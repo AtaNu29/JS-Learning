@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <style>
+    body {
+      background-color: #414141;
+      color: aliceblue;
+      font-family: sans-serif;
+    }
+    img {
+      margin: 10px;
+      border: 3px solid #fff;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Amazing image</h2>
+  <div>
+    <ul id="images">
+      <li>
+        <img
+          width="200px"
+          id="photoshop"
+          src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+          alt="photoshop" />
+      </li>
+      <li>
+        <img
+          width="200px"
+          id="japan"
+          src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+          alt="" />
+      </li>
+      <li>
+        <img
+          width="200px"
+          id="river"
+          src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+          alt="" />
+      </li>
+      <li>
+        <img
+          width="200px"
+          id="owl"
+          src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+          alt="" />
+      </li>
+      <li>
+        <img
+          width="200px"
+          id="prayer"
+          src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+          alt="" />
+      </li>
+      <li>
+        <a style="color: aliceblue;" href="https://google.com" id="google">Google</a>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    // Listener on the <ul> parent
+    document.getElementById('images').addEventListener('click', function(e){
+      console.log("clicked inside the ul");
+    }, false);
+
+    // Listener on the owl image
+    document.getElementById('owl').addEventListener('click', function(e){
+      console.log("owl clicked");
+      e.stopPropagation();
+    }, false);
+
+    // Listener for google link
+    document.getElementById("google").addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log("google clicked");
+    }, false);
+
+    // Project 2:
+    document.querySelector('#images').addEventListener('click', function(element) {
+      if (element.target.tagName === 'IMG') {
+        console.log(element.target.id);
+        let removeIt = element.target.parentNode;
+        removeIt.remove();
+      }
+    });
+  </script>
+</body>
+</html>
+
+<!-- 
+────────────────────────────
+🌟 JavaScript Events 🌟
+────────────────────────────
+
+Imagine your webpage is like a big playground. 
+Events happen when you do things like click, press keys, or move your mouse.
+JavaScript can listen to these events and do something in response.
+
+────────────────────────────
+✅ type
+────────────────────────────
+- Tells you WHAT happened.
+- Example: “click”, “keydown”, “mousemove”.
+
+────────────────────────────
+✅ timestamp
+────────────────────────────
+- Tells you WHEN it happened (in numbers, like a clock).
+- How many milliseconds since the page loaded.
+
+────────────────────────────
+✅ defaultPrevented
+────────────────────────────
+- Tells you if someone STOPPED the usual thing from happening.
+
+Example:
+- Clicking a link normally goes to a new page.
+- But if JavaScript says event.preventDefault(),
+  the link won’t go anywhere!
+
+────────────────────────────
+✅ target
+────────────────────────────
+- The EXACT thing you clicked or touched.
+
+────────────────────────────
+✅ toElement (old, not used much)
+────────────────────────────
+- Like target, but for mouseover/out events.
+
+────────────────────────────
+✅ srcElement (old name, not used much)
+────────────────────────────
+- Same as target, used in older browsers.
+
+────────────────────────────
+✅ currentTarget
+────────────────────────────
+- The element that has the EVENT LISTENER.
+
+────────────────────────────
+✅ clientX and clientY
+────────────────────────────
+- X and Y position of your mouse in the browser window.
+
+────────────────────────────
+✅ screenX and screenY
+────────────────────────────
+- X and Y position of your mouse on the whole screen.
+
+────────────────────────────
+✅ altKey, ctrlKey, shiftKey
+────────────────────────────
+- true or false
+- Checks if you held these special keys while doing something.
+
+────────────────────────────
+✅ keyCode
+────────────────────────────
+- A number for which key you pressed on the keyboard.
+- Example:
+  Enter → 13
+  A → 65
+
+Modern way is “key” instead of keyCode.
+
+────────────────────────────
+✅ e.stopPropagation()
+────────────────────────────
+- Stops the bubbling.
+- Normally the event goes:
+   from the smallest element → up to bigger ones.
+- e.stopPropagation() says:
+  🚫 “Stop here! Don’t tell anyone else!”
+  
+────────────────────────────
+✅ parentNode
+────────────────────────────
+- The parent of the element you clicked.
+
+Example:
+If you click an <img> inside a <li>:
+- the parentNode of the image is the <li>.
+
+────────────────────────────
+✅ remove()
+────────────────────────────
+- Removes an element from the page.
+
+Example:
+element.remove();
+→ Makes it disappear from the page!
+
+────────────────────────────
+✅ tagName
+────────────────────────────
+- Tells you what type of HTML tag an element is.
+
+Example:
+- An <img> tag → tagName = "IMG"
+- A <div> tag → tagName = "DIV"
+
+Used like:
+if (element.target.tagName === "IMG") { ... }
+────────────────────────────
+✅ Bubbling vs Capturing
+────────────────────────────
+
+Imagine:
+- A big box (div)
+- Inside it, a smaller box (button)
+
+🎈 Bubbling
+- Starts from inner → outer.
+- You shout in the button,
+  and the shout bubbles up to the div.
+
+🎈 Capturing
+- Starts from outer → inner.
+- A message starts at the gate and
+  walks closer to the button.
+
+────────────────────────────
+| Step | Bubbling | Capturing |
+|------|----------|-----------|
+| 1    | Inner    | Outer     |
+| 2    | Outer    | Inner     |
+
+Use capturing with:
+element.addEventListener("click", handler, true);
+
+Default is bubbling:
+element.addEventListener("click", handler, false);
+
+────────────────────────────
+💡 Quick Tip:
+- Bubbling = Inside → Out
+- Capturing = Outside → In
+────────────────────────────
+-->
