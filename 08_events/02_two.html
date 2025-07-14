@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hellow World</h1>
+    <button id="stop">Stop</button>
+</body>
+    <script>
+// 🌟 setInterval and setTimeout 🌟
+
+// Imagine you’re playing. Mom tells you:
+
+// ────────────────────────────
+// ✅ setTimeout
+// ────────────────────────────
+// - “I’ll call you ONCE after 5 seconds.”
+
+// Example:
+setTimeout(() => {
+    console.log("I called you!");
+}, 5000);
+
+// → It calls you just one time after 5 seconds.
+
+// ────────────────────────────
+// ✅ setInterval
+// ────────────────────────────
+// - “I’ll call you EVERY 5 seconds.”
+
+// Example:
+setInterval(() => {
+    console.log("I’m calling you again and again!");
+}, 5000);
+
+// → It calls you after 5 seconds,
+// → then again after another 5 seconds,
+// → then again… over and over.
+
+// ────────────────────────────
+// ✅ Easy way to remember:
+// ────────────────────────────
+// setTimeout = calls you ONCE.
+// setInterval = calls you AGAIN AND AGAIN.
+
+// 🎉
+
+
+// ────────────────────────────
+// ✅ First Job:
+// ────────────────────────────
+
+let sayAtanu = () => {
+    console.log("Atanu")
+};
+
+setTimeout(sayAtanu, 4000);
+
+// → What does this mean?
+// - The function “sayAtanu” will run after 4 seconds.
+// - After 4 seconds, it prints in the console:
+//   Atanu
+
+// ────────────────────────────
+// ✅ Second Job:
+// ────────────────────────────
+
+let changeHeading = function() {
+    document.querySelector("h1").innerText = "Best JS Course";
+}
+
+const changeMe = setTimeout(changeHeading, 4000);
+
+// → What does this mean?
+// - The function “changeHeading” will run after 4 seconds.
+// - It changes the <h1> text to:
+//   Best JS Course
+
+// ────────────────────────────
+// ✅ clearTimeout
+// ────────────────────────────
+
+document.getElementById("stop")
+  .addEventListener("click", () => {
+    clearTimeout(changeMe);
+    console.log("STOPPED");
+});
+
+// → What does this mean?
+// - If you click the button with id="stop",
+//   it stops “changeHeading” from running.
+// - It prints in the console:
+//   STOPPED
+
+/*
+────────────────────────────
+✅ Easy way to remember:
+────────────────────────────
+setTimeout → “Do this job once, after waiting.”
+
+clearTimeout → “Don’t do that job anymore!”
+
+🎉*/
+
+
+    </script>
+</html>

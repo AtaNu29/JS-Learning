@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+      background-color: #333;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+    }
+    </style>
+</head>
+<body>
+    <h1>Hellow World</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    let sayDate = function (message) {
+        console.log(message, Date.now());
+    }
+    let intervalId;
+
+    const startinterval = function () {
+        if (!intervalId) {
+            intervalId = setInterval(sayDate, 1000, "Hi");
+        }
+    };
+
+    const stopinterval = function () {
+       clearInterval(intervalId);
+        intervalId = null;
+        console.log("Interval Stopped");
+    };
+
+    document.getElementById('start').addEventListener('click', startinterval);
+
+    document.getElementById('stop').addEventListener('click', stopinterval);
+
+</script>
+</html>
