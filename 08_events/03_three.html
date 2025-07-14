@@ -25,26 +25,55 @@
     <button id="stop">Stop</button>
 </body>
 <script>
-    let sayDate = function (message) {
-        console.log(message, Date.now());
+    /* 
+🌟 Interval Timer Code Explained 🌟
+
+✅ sayDate function
+- Prints a message and the current time.
+
+✅ intervalId
+- Remembers if the timer is running.
+
+✅ startinterval
+- Starts setInterval if not already running.
+- Prints “Hi” and time every second.
+
+✅ stopinterval
+- Stops the interval.
+- Sets intervalId to null so you can start again.
+- Prints “Interval Stopped”.
+
+✅ Event Listeners
+- Start button → runs startinterval
+- Stop button → runs stopinterval
+
+💡 Super Short:
+Start = start printing every second.
+Stop = stop printing.
+*/
+
+let sayDate = function (message) {
+    console.log(message, Date.now());
+};
+
+let intervalId;
+
+const startinterval = function () {
+    if (!intervalId) {
+        intervalId = setInterval(sayDate, 1000, "Hi");
     }
-    let intervalId;
+};
 
-    const startinterval = function () {
-        if (!intervalId) {
-            intervalId = setInterval(sayDate, 1000, "Hi");
-        }
-    };
+const stopinterval = function () {
+    clearInterval(intervalId);
+    intervalId = null;
+    console.log("Interval Stopped");
+};
 
-    const stopinterval = function () {
-       clearInterval(intervalId);
-        intervalId = null;
-        console.log("Interval Stopped");
-    };
+document.getElementById('start').addEventListener('click', startinterval);
 
-    document.getElementById('start').addEventListener('click', startinterval);
+document.getElementById('stop').addEventListener('click', stopinterval);
 
-    document.getElementById('stop').addEventListener('click', stopinterval);
 
 </script>
 </html>
