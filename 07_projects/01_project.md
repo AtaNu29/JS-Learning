@@ -211,3 +211,65 @@ function newGame() {
 
 
 ```
+
+## project 5
+
+``` javascript
+
+const insert = document.getElementById('insert');
+
+window.addEventListener('keydown', (e) => {
+  insert.innerHTML = `
+    <div class = "color">
+    <table>
+    <tr>
+      <th>key</th>
+      <th>keyCode</th>
+      <th>code</th>
+    </tr>
+    <tr>
+      <td>${e.key === ' ' ? 'Space' : e.key}</td>
+      <td>${e.keyCode}</td>
+      <td>${e.code}</td>
+    </tr>
+  </table>
+    </div>
+  `;
+});
+
+```
+
+## project 6
+
+``` javascript
+
+const randomColors = function () {
+  const hex = '0123456789ABCDEF';
+  let colors = '#';
+  for (let i = 0; i < 6; i++) {
+    colors += hex[Math.floor(Math.random() * 16)];
+  }
+  return colors;
+};
+let intervalID;
+
+const startChangingColor = function () {
+  if (!intervalID) {
+    intervalID = setInterval(changeBgColor, 1000);
+  }
+
+  function changeBgColor() {
+    document.body.style.backgroundColor = randomColors();
+  }
+};
+
+const stopChangingColor = function () {
+  clearInterval(intervalID);
+  intervalID = null;
+};
+
+document.getElementById('start').addEventListener('click', startChangingColor);
+
+document.getElementById('stop').addEventListener('click', stopChangingColor);
+
+```
