@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #FFF;">
+<!-- 
+| **Value** | **State**         | **Description**                                                 |
+| --------- | ----------------- | --------------------------------------------------------------- |
+| 0         | UNSENT            | Client has been created. `open()` not called yet.               |
+| 1         | OPENED            | `open()` has been called.                                       |
+| 2         | HEADERS\_RECEIVED | `send()` has been called, and headers and status are available. |
+| 3         | LOADING           | Downloading; `responseText` holds partial data.                 |
+| 4         | DONE              | The operation is complete.                                      |
+-->
+<img src="" alt="">
+</body>
+<script>
+    let xhrFollowersCount;
+    let xhrImg;
+
+    const xhr = new XMLHttpRequest();
+    let requestUrl = 'https://api.github.com/users/atanu29';
+    xhr.open('GET', requestUrl);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText)
+            xhrFollowersCount = data.followers;
+            xhrImg = data.avatar_url;
+            
+            // Assignment
+            const div = document.createElement('div');
+            div.className = 'main';
+            div.id = 'myId';
+
+            const img = document.createElement('img');
+            img.src = xhrImg;
+            img.style.width = '150px';
+            img.style.height = '150px';
+            img.style.borderRadius = '50%';
+            img.style.objectFit = 'cover';
+            div.appendChild(img);
+
+            const text = document.createElement('p');
+            text.textContent = `Followers: ${xhrFollowersCount}`;
+            text.textContent = `Followers: ${data.followers}`;
+            text.style.color = '#fff';
+            text.style.marginTop = '12px';
+            div.appendChild(text);
+
+            div.style.backgroundColor = '#650000';
+            div.style.padding = '12px';
+            div.style.borderRadius = '7px';
+            div.style.width = '250px';
+            div.style.height = '300px';
+            div.style.textAlign = 'center';
+            div.style.margin = '20px auto';
+            div.style.fontFamily = 'Arial, sans-serif';
+            div.style.fontSize = '18px';
+            div.style.display = 'flex';
+            div.style.flexDirection = 'column';
+            div.style.justifyContent = 'center';
+            div.style.alignItems = 'center';
+
+            document.body.appendChild(div);
+
+            const btn = document.createElement('button');
+            btn.textContent = 'Get Data';
+            btn.addEventListener('click', () => {
+            window.open('https://api.github.com/users/hiteshchoudhary', '_blank');
+            });
+            btn.style.color = '#00000';
+            btn.style.marginTop = '12px';
+            btn.style.padding = '7px 15px';
+            btn.style.border = 'none';
+            btn.style.cursor = 'pointer';
+            btn.style.borderRadius = '15px';
+
+            div.appendChild(btn);
+        }
+    }
+    xhr.send();
+
+</script>
+</html>
